@@ -13,10 +13,14 @@ const pool = new Pool({
   database: process.env.DB_DATABASE,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
-  ssl: process.env.NODE_ENV !== 'production' ? false : {
+  ssl: {
     rejectUnauthorized: true,
     ca: process.env.DB_CA_CERT
   }
+  // ssl: process.env.NODE_ENV !== 'production' ? false : {
+  //   rejectUnauthorized: true,
+  //   ca: process.env.DB_CA_CERT
+  // }
 });
 
 module.exports = {
