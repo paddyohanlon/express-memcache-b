@@ -24,6 +24,11 @@
       <p>
         The largest prime number less than or equal to <%= n %> is <strong><%= prime %></strong>.
       </p>
+
+      <form action="/like" method="get">
+        <input type="hidden" name="n" value="<%= n %>">
+        <input type="submit" value="Like"> <%= likes %>
+      </form>
     <% } %>
   </body>
 </html>
