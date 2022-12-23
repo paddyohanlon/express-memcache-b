@@ -45,9 +45,6 @@ app.get('/like', async (req, res) => {
     res.redirect('/');
     return;
   }
-
-  // likesMap[n]++;
-  // Update likes
   try {
 
     const result = await db.query('UPDATE likes SET likes = likes + 1 WHERE n = $1', [n]);
